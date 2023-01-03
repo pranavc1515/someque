@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <script>
+    function SearchEle() {
+      let data = [12, 54, 67, 4, 2, 76, 42, 1, 87, 987];
+      let find = document.getElementById("findEle").value;
+      let position = undefined;
+      for (let i = 0; i <= data.length; i++) {
+        if (data[i] == find) {
+          position = i;
+          break;
+        }
+      }
+      console.log(position)
+      if (!position){
+        alert("element was not found")
+      }
+      else {
+        alert("Element positon is" + " " + position)
+      }
+    }
+  </script>
+  <body>
+    <input id="findEle" type="text" placeholder="enter the postion" />
+    <button onclick="SearchEle()">Find Element</button>
+  </body>
+</html>

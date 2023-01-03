@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <script>
+    let queue = [];
+    let currentsize = queue.length;
+    let maxSize = 5;
+
+    function enqueueWithBtn() {
+      let newVal = document.getElementById("qEL").value;
+      if (currentsize >= maxSize) {
+        alert("queue is already full");
+      } else {
+        queue[currentsize] = newVal;
+        currentsize++;
+      }
+    }
+    function display() {
+      console.log(queue);
+    }
+    function dequeue() {
+      if (!isEmpty()) {
+        for (let i = 0; i < queue.length; i++) {
+            queue[i] = queue[i + 1];
+        }
+        currentsize--;
+        queue.length = currentsize;
+      } else {
+        alert(" the queue is already empty");
+      }
+    }
+
+    function front() {
+      if (!isEmpty()) {
+        console.log(queue[0]);
+      } else {
+        alert("queue is allready empty");
+      }
+    }
+
+    function rear() {
+      if (!isEmpty()) {
+        console.log(queue[currentsize - 1]);
+      } else {
+        alert("queue is empty");
+      }
+    }
+
+    function isEmpty() {
+      if (currentsize <= 0) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+    // enqueue(50);
+    // enqueue(20);
+    // enqueue(30);
+    // display();
+  </script>
+  <body>
+    <h1>Queue with input elements in JavaScript</h1>
+    <input  id="qEL" placeholder="Enter the value in Array" />
+    <button onclick="enqueueWithBtn()">Add Element</button>
+    <button id="display" onclick="display()">display</button>
+    <button onclick="dequeue()">dequeue</button>
+    
+    <button onclick="front()">Front</button>
+    <button onclick="rear()">rear</button>
+  </body>
+</html>

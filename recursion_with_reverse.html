@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        let a = [2,6,443,76,43,87,9,24]
+        let temp;
+
+        function reverseArray(a,start,end){
+            console.log(a);
+            if(start<=end)
+            {temp = a[start];
+            a[start] =a[end];
+            a[end] = temp;
+            reverseArray(a,start+1,end-1)}
+        }
+        reverseArray(a,0,a.length-1)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

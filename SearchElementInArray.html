@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Element in The Array</title>
+    <script>
+    //     let array = [10,43,32,77,98,20,34,34,88,98];
+    // let item = 98;
+    // let index = undefined;
+
+    // for(let i=0;i<array.length-1;i++){
+    //     if(array[i]===parseInt(item))
+    //     {
+    //         index = i;
+    //         break;
+    //     }
+    //     console.warn(index);
+    // }
+    
+
+    function searchEle(){
+        let array = [10,43,32,77,98,20,34,34,88,98];
+    let item = document.getElementById('Searchitem').value;
+    let index = undefined;
+        for(i=0;i<array.length-1;i++){
+        if(array[i]==parseInt(item))
+        {
+            index = i;
+            break;
+        }
+        
+    }
+    console.log(index);
+    }
+    
+    
+    </script>
+</head>
+<body>
+    <input type="text" id="Searchitem"  >
+    <button onclick="searchEle()">Search a item</button>
+
+
+</body>
+</html>   
